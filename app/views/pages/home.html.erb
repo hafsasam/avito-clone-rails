@@ -1,0 +1,26 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="article_form">
+        <%= form_for(@article) do |f| %>
+          <div class="col-sm-8">
+            <%= f.text_field :titre, rows: 10, class: "form-control", placeholder: "Titre" %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Texte" %>
+          </div>
+          <%= f.submit "Soumettre", class: "btn btn-primary" %>
+        <% end %>
+      </section>
+    </aside>
+  </div>
+
+<% else %>
+
+  <div class="jumbotron">
+    <h1>Hello, world!</h1>
+    <p>...</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  </div>
+
+<% end %>

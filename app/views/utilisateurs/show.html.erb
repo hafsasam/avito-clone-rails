@@ -1,0 +1,9 @@
+<%= @utilisateur.nom %>, <%= @utilisateur.email %>
+
+<% if @utilisateur.articles.any? %>
+  <h3>Articles (<%= @utilisateur.articles.count %>)</h3>
+  <ol class="articles">
+    <%= render @articles %>
+  </ol>
+  <%= will_paginate @articles %>
+<% end %>
